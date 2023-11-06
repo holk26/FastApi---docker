@@ -1,0 +1,18 @@
+|____app
+| |____config
+| | |____base_class.py
+| | |____session.py
+| |____models
+| | |____work.py
+| |____schemas
+| |____api
+| |____main.py
+| |____routes
+|____Dockerfile
+|____README.md
+|____.gitignore
+|____docker-compose.yml
+
+Tengo esta estructura quiero hacer una api con fastApi Mysql, sqlalchemy, poder hacer migraciones
+la api consume una api que trae trabajos y los almacena luego los muestra por id o todos
+usa buenas practicas quier el codigo archivo por archivo completo para copiar y pegar
