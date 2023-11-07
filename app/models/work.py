@@ -1,26 +1,19 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import Session
 from app.config.base_class import Base
+from sqlalchemy import Column, Integer, String, DateTime, Float
+from sqlalchemy.sql import func
 
 
-class Job(Base):
-    __tablename__ = 'jobs'
+class Work(Base):
+    __tablename__ = "works"
 
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-
-
-def get_jobs(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(Job).offset(skip).limit(limit).all()
-
-
-def get_job(db: Session, job_id: int):
-    return db.query(Job).filter(Job.id == job_id).first()
-
-
-def create_job(db: Session, job: schemas.JobCreate):
-    db_job = Job(title=job.title)
-    db.add(db_job)
-    db.commit()
-    db.refresh(db_job)
-    return db_job
+    id_jod = Column(Integer, primary_key=True, index=True)
+    title = Column(String(255), index=True)  # Título del trabajo
+    location = Column(String(255), index=True)
+    snippet = Column(String(1024))
+    salary = Column(String(255))
+    source = Column(String(255))
+    type = Column(String(255))
+    link = Column(String(255))  # Enlace al listado de trabajo
+    company = Column(String(255))  # Nombre de la compañía
+    updated = Column(DateTime, server_default=func.now(), onupdate=func.now())
+    id = Column(Integer)
