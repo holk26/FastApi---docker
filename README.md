@@ -32,14 +32,13 @@ docker run --name mysql -v /home/homero/mysql-db:/var/lib/mysql -e MYSQL_ROOT_PA
 ```
 docker compose up -d
 ```
-![Screenshot](https://github.com/holk26/FastApi/assets/23020718/faea7a6b-74ac-4abf-b642-262984e029cb)
+![Screenshot-5](https://github.com/holk26/FastApi---docker/assets/23020718/0dd24938-fb93-428f-ac4a-78c8e543a428)
 
-![Screenshot-2](https://github.com/holk26/FastApi/assets/23020718/3790cc8a-2654-4032-9c2e-451b4ee591bd)
+![Screenshot-4](https://github.com/holk26/FastApi---docker/assets/23020718/eb93c8a8-ef4a-4750-a7ad-6e73d0f3f7a7)
 
-![Screenshot-4](https://github.com/holk26/FastApi/assets/23020718/5da2b164-4b5f-468c-ba8e-1aa4f333ddb1)
+![Screenshot-2](https://github.com/holk26/FastApi---docker/assets/23020718/b4e472af-3840-4b0a-9e74-0afc23229fa6)
 
-![Screenshot-5](https://github.com/holk26/FastApi/assets/23020718/77ef6978-a470-4674-a1f4-c31bcf297e96)
-
+![Screenshot](https://github.com/holk26/FastApi---docker/assets/23020718/8009bdc7-4250-42ac-9440-e5cfa02cc7d2)
 
 
 
