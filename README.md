@@ -23,6 +23,8 @@
 
 cuatro. Ejecute el contenedor de MySQL con el siguiente comando:
 
+
+nota: modifica esta linea por su ubicacion /home/homero/mysql-db
 ```
 docker run --name mysql -v /home/homero/mysql-db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=users -p 3306:3306 -d mysql
 ```
