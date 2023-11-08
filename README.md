@@ -25,6 +25,9 @@ La API incluye documentación interactiva generada por Swagger, la cual está di
 
 cuatro. Ejecute el contenedor de MySQL con el siguiente comando:
 
+```
+docker pull mysql
+```
 
 nota: modifica esta linea por su ubicacion /home/homero/mysql-db
 ```
