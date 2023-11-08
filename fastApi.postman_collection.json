@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "ce715901-6ebb-4cd5-82d1-f33cd0c3447a",
+		"name": "fastApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23382486"
+	},
+	"item": [
+		{
+			"name": "Obtener datos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Almacenar datos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un registro de datos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/data/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data",
+						"1"
+					]
+				},
+				"description": "\nThis API endpoint makes an HTTP GET request to retrieve data from the specified URL: http://127.0.0.1:8000/api/data/1. The request is used to fetch information related to a specific data item.\n\nThe last execution of this request returned a response with a status code of 200, indicating a successful retrieval of data. The response body contains various properties related to the data item, such as \"title\", \"location\", \"salary\", \"type\", \"company\", \"id\", \"id_jod\", \"snippet\", \"source\", \"link\", and \"updated\".\n\nPlease note that the values of these properties were not provided in the response, so they may be empty or missing. The properties can be used to get detailed information about the data item.\n\nTo use this API endpoint, you can make an HTTP GET request to the specified URL, replacing \"1\" with the desired ID of the data item you want to retrieve.\n\nPlease refer to the API documentation for more details on how to use this endpoint and the available properties in the response.\n"
+			},
+			"response": []
+		}
+	]
+}

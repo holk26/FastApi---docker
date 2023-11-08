@@ -1,5 +1,7 @@
 # Para iniciar el docker de todo el proyecto, siga estos pasos:
 
+- tambien se documento con swagger http://127.0.0.1:8000/docs
+
 1. crear entorno virtual
 
 ```
