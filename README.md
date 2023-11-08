@@ -1,6 +1,8 @@
-# Para iniciar el docker de todo el proyecto, siga estos pasos:
+# Explicacion: 
 
-- tambien se documento con swagger http://127.0.0.1:8000/docs
+La API está desarrollada usando FastAPI, y para las operaciones de base de datos se emplea el Object-Relational Mapper (ORM) SQLAlchemy. El servidor es manejado por Uvicorn y las migraciones de la base de datos se realizan con Alembic. La base de datos MySQL se ejecuta en un contenedor Docker, y la API proporciona una funcionalidad para buscar empleos.
+
+La API incluye documentación interactiva generada por Swagger, la cual está disponible en: http://127.0.0.1:8000/docs.
 
 1. crear entorno virtual
 
