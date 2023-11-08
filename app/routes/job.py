@@ -43,24 +43,12 @@ def save_work(db: Session = Depends(get_db)):
     response = requests.post(url, headers=headers, data=data)
     jobs = response.json().get('jobs', [])
     for job_data in jobs:
-        try:
-            # Intenta crear una instancia de WorkCreate con los datos obtenidos
-            job = WorkCreate(**job_data)
-            work = Work(**job.dict())
-            db.add(work)
-        except ValidationError as e:
-            # Maneja los errores de validación aquí
-            # Por ejemplo, puedes decidir continuar con el siguiente trabajo,
-            # registrar el error, o detener el proceso y devolver un error HTTP.
-            # Aquí se continúa con el siguiente trabajo después de registrar el error.
-            print(
-                f"Error de validación para el trabajo: {job_data['title']}, {e}")
+        work = Work(**job_data)
+        db.add(work)
 
     try:
-        # Intenta cometer todos los trabajos agregados a la sesión de la base de datos.
         db.commit()
     except SQLAlchemyError as e:
-        # Si hay un error de SQLAlchemy durante el commit, haz rollback y devuelve un error HTTP.
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
 

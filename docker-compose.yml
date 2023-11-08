@@ -12,8 +12,8 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: dbname
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: users
     ports:
       - "3306:3306"
 

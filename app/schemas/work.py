@@ -1,35 +1,28 @@
-from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
+from pydantic import BaseModel
 
 
 class WorkBase(BaseModel):
-    title: str
-    location: str
+    title: Optional[str] = None
+    location: Optional[str] = None
     snippet: Optional[str] = None
-    salary: Optional[str] = None
-    source: str
+    salary: Optional[float] = None
+    source: Optional[str] = None
     type: Optional[str] = None
-    link: str
-    company: str
-    updated: datetime
-    id: int
+    link: Optional[str] = None
+    company: Optional[str] = None
+    updated: Optional[datetime] = None
+    id: Optional[int] = None
 
 
 class WorkCreate(WorkBase):
-    title: str
-    location: str
-    snippet: Optional[str] = None
-    salary: Optional[float] = None
-    source: str
-    type: Optional[str] = None
-    link: str
-    company: str
-    updated: datetime
+    pass  # No need to repeat fields, they are inherited from WorkBase
 
 
 class Work(WorkBase):
-    id_jod: int
+    # Make sure this is named correctly, previously it was 'id_jod'
+    id_job: Optional[int] = None
 
     class Config:
         orm_mode = True

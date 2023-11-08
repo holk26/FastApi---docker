@@ -16,4 +16,4 @@ class Work(Base):
     link = Column(String(255))  # Enlace al listado de trabajo
     company = Column(String(255))  # Nombre de la compañía
     updated = Column(DateTime, server_default=func.now(), onupdate=func.now())
-    id = Column(Integer)
+    id = Column(String(255))
