@@ -4,9 +4,13 @@ WORKDIR /usr/src/app
 
 COPY requirements.txt ./
 
-# Upgrade pip and install requirements with better retry handling
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
-    pip install --no-cache-dir --default-timeout=100 --retries=5 -r requirements.txt
+# Configure pip for better network resilience and upgrade pip
+ENV PIP_DEFAULT_TIMEOUT=100 \
+    PIP_RETRIES=10 \
+    PIP_NO_CACHE_DIR=1
+
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install -r requirements.txt
 
 COPY . .
 
