@@ -9,8 +9,12 @@ ENV PIP_DEFAULT_TIMEOUT=100 \
     PIP_RETRIES=10 \
     PIP_NO_CACHE_DIR=1
 
-RUN pip install --upgrade pip setuptools wheel && \
-    pip install -r requirements.txt
+# Upgrade pip first, then install requirements with trusted-host fallback for SSL issues
+RUN pip install --upgrade pip setuptools wheel || \
+    pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --upgrade pip setuptools wheel
+
+RUN pip install -r requirements.txt || \
+    pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org -r requirements.txt
 
 COPY . .
 
